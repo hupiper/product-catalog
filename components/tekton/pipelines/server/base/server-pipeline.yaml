@@ -13,7 +13,7 @@ spec:
       default: master
     - name: git_url
       type: string
-      default: https://github.com/gnunn-gitops/product-catalog-server
+      default: https://github.com/hupiper/product-catalog-server
     - name: MAVEN_MIRROR_URL
       default: ""
     - name: image_dest_url
