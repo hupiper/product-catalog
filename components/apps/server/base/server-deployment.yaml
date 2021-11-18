@@ -7,7 +7,7 @@ metadata:
   annotations:
     app.openshift.io/connects-to: database
     app.openshift.io/vcs-ref: master
-    app.openshift.io/vcs-uri: 'https://github.com/gnunn-gitops/product-catalog-server'
+    app.openshift.io/vcs-uri: 'https://github.com/hupiper/product-catalog-server'
   labels:
     app: server
     app.kubernetes.io/name: server
@@ -37,7 +37,7 @@ spec:
             #   value: >-
             #     -Dquarkus.kubernetes-config.enabled=true
             #     -Dquarkus.kubernetes-config.config-maps=server
-          image: quay.io/gnunn/server:latest
+          image: quay.io/hupiper/server:latest
           imagePullPolicy: Always
           ports:
           - containerPort: 8080

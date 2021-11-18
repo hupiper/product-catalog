@@ -9,7 +9,7 @@ bases:
 - ../../../components/apps/server/base
 
 images:
-- name: quay.io/gnunn/client
+- name: quay.io/hupiper/client
   newTag: test
-- name: quay.io/gnunn/server
+- name: quay.io/hupiper/server
   newTag: test
