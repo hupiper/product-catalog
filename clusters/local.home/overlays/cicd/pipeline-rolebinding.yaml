@@ -6,15 +6,11 @@ metadata:
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: edit
+  name: cluster-admin
 subjects:
 - kind: ServiceAccount
   name: pipeline
   namespace: product-catalog-cicd
-rules:
-- apiGroups: ["integreatly.org"] 
-  resources: ["grafanadatasources","grafananotificationchannels","grafanas"]
-  verbs: ["create","update","patch","delete"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
@@ -24,7 +20,7 @@ metadata:
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: edit
+  name: cluster-admin
 subjects:
 - kind: ServiceAccount
   name: pipeline
