@@ -4,8 +4,8 @@ kind: Kustomization
 images:
 - name: quay.io/hupiper/client
   newTag: latest
-- name: quay.io/hupiper/server
-  newName: quay.io/hupiper/server
-  newTag: 813e347-1027644688
+#- name: quay.io/hupiper/server
+#  newName: quay.io/hupiper/server
+#  newTag: 813e347-1027644688
 resources:
 - ../../../../environments/overlays/prod
