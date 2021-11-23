@@ -6,7 +6,7 @@ metadata:
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: global-operators-admin
+  name: edit
 subjects:
 - kind: ServiceAccount
   name: pipeline
@@ -20,7 +20,7 @@ metadata:
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: global-operators-admin
+  name: edit
 subjects:
 - kind: ServiceAccount
   name: pipeline
