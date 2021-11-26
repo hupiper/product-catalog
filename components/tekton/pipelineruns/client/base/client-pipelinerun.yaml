@@ -13,6 +13,6 @@ spec:
     - name: push-to-prod
       value: "false"
   workspaces:
-  - name: git-source
-    persistentVolumeClaim:
-      claimName: client-source
+    - name: git-source
+      persistentVolumeClaim:
+        claimName: client-source
