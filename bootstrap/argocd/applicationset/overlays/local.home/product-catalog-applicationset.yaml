@@ -10,39 +10,39 @@ spec:
   generators:
     - list:
         elements:
-        - cluster: local
-          url: https://kubernetes.default.svc
-          values:
-            name: product-catalog-dev
-            path: environments/overlays/dev
-            namespace: product-catalog-dev
-        - cluster: local
-          url: https://kubernetes.default.svc
-          values:
-            name: product-catalog-test
-            path: environments/overlays/test
-            namespace: product-catalog-test
-        - cluster: local
-          url: https://kubernetes.default.svc
-          values:
-            name: product-catalog-prod
-            path: clusters/local.home/overlays/prod
-            namespace: product-catalog-prod
-        - cluster: local
-          url: https://kubernetes.default.svc
-          values:
-            name: product-catalog-cicd
-            path: clusters/local.home/overlays/cicd
-            namespace: product-catalog-cicd
-        - cluster: local
-          url: https://kubernetes.default.svc
-          values:
-            name: product-catalog-monitor
-            path: environments/overlays/monitor
-            namespace: product-catalog-monitor
+          - cluster: local
+            url: https://kubernetes.default.svc
+            values:
+              name: product-catalog-dev
+              path: environments/overlays/dev
+              namespace: product-catalog-dev
+          - cluster: local
+            url: https://kubernetes.default.svc
+            values:
+              name: product-catalog-test
+              path: environments/overlays/test
+              namespace: product-catalog-test
+          - cluster: local
+            url: https://kubernetes.default.svc
+            values:
+              name: product-catalog-prod
+              path: clusters/local.home/overlays/prod
+              namespace: product-catalog-prod
+          - cluster: local
+            url: https://kubernetes.default.svc
+            values:
+              name: product-catalog-cicd
+              path: clusters/local.home/overlays/cicd
+              namespace: product-catalog-cicd
+          - cluster: local
+            url: https://kubernetes.default.svc
+            values:
+              name: product-catalog-monitor
+              path: environments/overlays/monitor
+              namespace: product-catalog-monitor
   template:
     metadata:
-      name: '{{values.name}}'
+      name: "{{values.name}}"
       annotations:
         argocd.argoproj.io/compare-options: IgnoreExtraneous
         argocd.argoproj.io/sync-options: Prune=false
@@ -54,8 +54,8 @@ spec:
           selfHeal: true
       source:
         repoURL: https://github.com/hupiper/product-catalog
-        targetRevision: master
-        path: '{{values.path}}'
+        targetRevision: main
+        path: "{{values.path}}"
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{values.namespace}}'
+        namespace: "{{values.namespace}}"

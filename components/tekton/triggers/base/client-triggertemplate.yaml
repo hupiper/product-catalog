@@ -7,7 +7,7 @@ spec:
   params:
     - name: git-revision
       description: The git revision
-      default: master
+      default: main
     - name: git-url
       description: The git repository url
     - name: content-type

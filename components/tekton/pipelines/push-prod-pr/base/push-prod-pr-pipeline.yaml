@@ -8,7 +8,7 @@ spec:
   params:
     - name: git_revision
       type: string
-      default: master
+      default: main
     - name: git_url
       type: string
       default: https://github.com/hupoiper/product-catalog

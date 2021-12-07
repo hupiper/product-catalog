@@ -8,9 +8,9 @@ roleRef:
   kind: ClusterRole
   name: edit
 subjects:
-- kind: ServiceAccount
-  name: pipeline
-  namespace: product-catalog-cicd
+  - kind: ServiceAccount
+    name: pipeline
+    namespace: product-catalog-cicd
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
@@ -22,6 +22,6 @@ roleRef:
   kind: ClusterRole
   name: edit
 subjects:
-- kind: ServiceAccount
-  name: pipeline
-  namespace: product-catalog-cicd
+  - kind: ServiceAccount
+    name: pipeline
+    namespace: product-catalog-cicd

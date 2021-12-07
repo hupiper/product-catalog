@@ -4,20 +4,20 @@ kind: Kustomization
 namespace: product-catalog-cicd
 
 resources:
-- ../../../../components/tekton/pipelineruns/client/base
-- ../../../../components/tekton/pipelineruns/server/base
+  - ../../../../components/tekton/pipelineruns/client/base
+  - ../../../../components/tekton/pipelineruns/server/base
 
 patches:
-- target:
-    kind: PipelineRun
-  patch: |-
-    - op: add
-      path: /spec/params/-
-      value:
-        name: cluster
-        value: local.home
-    - op: add
-      path: /spec/params/-
-      value:
-        name: acs-secret
-        value: roxsecrets
+  - target:
+      kind: PipelineRun
+    patch: |-
+      - op: add
+        path: /spec/params/-
+        value:
+          name: cluster
+          value: local.home
+      - op: add
+        path: /spec/params/-
+        value:
+          name: acs-secret
+          value: roxsecrets

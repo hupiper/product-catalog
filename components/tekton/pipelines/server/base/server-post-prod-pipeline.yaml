@@ -11,7 +11,7 @@ spec:
         name: newman
       params:
         - name: COLLECTION
-          value: https://raw.githubusercontent.com/hupiper/product-catalog-server/master/tests/product-catalog-server-tests.json
+          value: https://raw.githubusercontent.com/hupiper/product-catalog-server/main/tests/product-catalog-server-tests.json
         - name: ENVIRONMENT
           value: newman-prod-env.json
       workspaces:

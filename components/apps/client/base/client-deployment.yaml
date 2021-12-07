@@ -4,7 +4,7 @@ metadata:
   name: client
   annotations:
     app.openshift.io/connects-to: server
-    app.openshift.io/vcs-ref: master
+    app.openshift.io/vcs-ref: main
     app.openshift.io/vcs-uri: 'https://github.com/hupiper/product-catalog-client'
   labels:
     app: client

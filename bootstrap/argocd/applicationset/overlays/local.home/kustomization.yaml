@@ -4,4 +4,4 @@ kind: Kustomization
 namespace: product-catalog-gitops
 
 resources:
-- product-catalog-applicationset.yaml
+  - product-catalog-applicationset.yaml

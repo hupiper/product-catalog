@@ -20,6 +20,6 @@ spec:
     - name: app
       value: server
   workspaces:
-  - name: git-source
-    persistentVolumeClaim:
-      claimName: manifest-source
+    - name: git-source
+      persistentVolumeClaim:
+        claimName: manifest-source

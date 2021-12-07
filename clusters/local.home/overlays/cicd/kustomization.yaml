@@ -2,7 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 bases:
-- ../../../../environments/overlays/cicd
+  - ../../../../environments/overlays/cicd
 
 # generatorOptions:
 #   disableNameSuffixHash: true
@@ -14,9 +14,9 @@ bases:
 #       - secrets/.dockerconfigjson
 
 resources:
-- pipeline-rolebinding.yaml
-- docker-sealed-secret.yaml
-- github-sealed-secret.yaml
+  - pipeline-rolebinding.yaml
+  - docker-sealed-secret.yaml
+  - github-sealed-secret.yaml
 #- slack-deployments-webhook-sealed-secret.yaml
 
 # patchesJson6902:
@@ -26,9 +26,9 @@ resources:
 #       kind: PersistentVolumeClaim
 #       name: m2-cache
 #       version: v1
-  # - path: patch-pvc-block.yaml
-  #   target:
-  #     group: ""
-  #     kind: PersistentVolumeClaim
-  #     name: npm-cache
-  #     version: v1
+# - path: patch-pvc-block.yaml
+#   target:
+#     group: ""
+#     kind: PersistentVolumeClaim
+#     name: npm-cache
+#     version: v1

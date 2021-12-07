@@ -10,7 +10,7 @@ spec:
   params:
     - name: git_revision
       type: string
-      default: master
+      default: main
     - name: git_url
       type: string
       default: https://github.com/hupiper/product-catalog-server
@@ -231,7 +231,7 @@ spec:
         - deploy-dev
       params:
         - name: COLLECTION
-          value: https://raw.githubusercontent.com/hupiper/product-catalog-server/master/tests/product-catalog-server-tests.json
+          value: https://raw.githubusercontent.com/hupiper/product-catalog-server/main/tests/product-catalog-server-tests.json
         - name: ENVIRONMENT
           value: newman-dev-env.json
       workspaces:
@@ -269,7 +269,7 @@ spec:
         - deploy-test
       params:
         - name: COLLECTION
-          value: https://raw.githubusercontent.com/hupiper/product-catalog-server/master/tests/product-catalog-server-tests.json
+          value: https://raw.githubusercontent.com/hupiper/product-catalog-server/main/tests/product-catalog-server-tests.json
         - name: ENVIRONMENT
           value: newman-test-env.json
       workspaces:

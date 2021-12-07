@@ -2,11 +2,11 @@
 
 This is an OpenShift demo showing how to do GitOps in a kubernetes way using tools like [ArgoCD](https://argoproj.github.io/argo-cd/) and [Kustomize](https://kubernetes.io/docs/tasks/manage-kubernetes-objects/kustomization/). The demo application is a three tier application using React for the front-end with Quarkus providing APIs as the back-end. The back-end was originally written in PHP and then ported to Quarkus. The application itself is a simple product catalog:
 
-![alt text](https://raw.githubusercontent.com/gnunn-gitops/product-catalog/master/docs/img/screenshot.png)
+![alt text](https://raw.githubusercontent.com/gnunn-gitops/product-catalog/main/docs/img/screenshot.png)
 
 The topology view in OpenShift shows the three tiers of the application:
 
-![alt text](https://raw.githubusercontent.com/gnunn-gitops/product-catalog/master/docs/img/topology.png)
+![alt text](https://raw.githubusercontent.com/gnunn-gitops/product-catalog/main/docs/img/topology.png)
 
 ### Running demo locally
 
@@ -38,7 +38,7 @@ This project requires Nexus and SonarQube be available, this project used to dep
 
 Once deployed in your cluster under ArgoCD it should appear as follows:
 
-![alt text](https://raw.githubusercontent.com/gnunn-gitops/product-catalog/master/docs/img/argocd.png)
+![alt text](https://raw.githubusercontent.com/gnunn-gitops/product-catalog/main/docs/img/argocd.png)
 
 ### Test CI/CD Pipelines
 
@@ -49,11 +49,11 @@ oc apply -k manifests/tekton/pipelineruns/client/base
 oc apply -k manifests/tekton/pipelineruns/server/base
 ```
 
-To test the pipelines are actually taking changes, you can add a logo to the product catalog. The code to do this is commented out and can be found in the [nav.jsx](https://github.com/gnunn1/quarkus-product-catalog/blob/master/client/src/js/components/layouts/nav.jsx#L45) file.
+To test the pipelines are actually taking changes, you can add a logo to the product catalog. The code to do this is commented out and can be found in the [nav.jsx](https://github.com/gnunn1/quarkus-product-catalog/blob/main/client/src/js/components/layouts/nav.jsx#L45) file.
 
 Once you make the code change, start the client pipeline. Note that in OpenShift Pipelines the GUI does not support creating a new PipelineRunTask with a workspace, if you want to drive it from a GUI go into the PipelineRuns and simple rerun an existing one.
 
-![alt text](https://raw.githubusercontent.com/gnunn-gitops/product-catalog/master/docs/img/tekton-rerun.png)
+![alt text](https://raw.githubusercontent.com/gnunn-gitops/product-catalog/main/docs/img/tekton-rerun.png)
 
 ### Test Prod Pipeline
 
@@ -61,7 +61,7 @@ The demo uses a pipeline called ```push-prod-pr``` that creates a pull request i
 
 For the server pipeline the process has been enhanced so that a post-sync hook in ArgoCD will trigger a pipeline to run an integration test after the deployment and send a notification of the status to a slack channel. This process is depicted in the diagram below.
 
-![alt text](https://raw.githubusercontent.com/gnunn-gitops/product-catalog/master/docs/img/cicd-flow.png)
+![alt text](https://raw.githubusercontent.com/gnunn-gitops/product-catalog/main/docs/img/cicd-flow.png)
 
 To execute the pipelines you will need to create pipelinerun objects, base versions are available in ```manifests/tekton/pipelineruns```. A script is also available at ```scripts/apply-pipelineruns.sh``` to load the client and server pipelineruns however you will need to modify the pipelineruns to reflect your cluster and enterprise registry.
 
@@ -77,6 +77,6 @@ A basic monitoring system is installed as part of the demo, as a pre-requisite i
 
 This demo deploys grafana into the ```product-catalog-monitor``` namespace along with a simple dashboard for the server application. The dashboard tracks JVM metrics as well as API calls to the server, with no load the API call metrics will be flat and that is normal:
 
-![alt text](https://raw.githubusercontent.com/gnunn-gitops/product-catalog/master/docs/img/monitoring.png)
+![alt text](https://raw.githubusercontent.com/gnunn-gitops/product-catalog/main/docs/img/monitoring.png)
 
 There's a sample siege script that can be used to drive some load if desired under scripts, you will need to update the script to reflect the endpoints in your cluster.
